@@ -7,6 +7,14 @@
   --color-form: #414141;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+input[type="checkbox"].accent-primary {
+  accent-color: var(--color-primary);
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("/fonts/Roboto/Roboto.woff2") format("woff2");
@@ -52,8 +60,15 @@
   .text-main {
     font-family: "Roboto", sans-serif;
     font-size: 32px;
-    line-height: 38px;
+    line-height: 1.2;
     font-weight: normal;
+  }
+
+  .text-writing {
+    font-family: "Roboto", sans-serif;
+    font-size: 96px;
+    line-height: 10%;
+    font-weight: 600; /* Bold */
   }
 
   /* Особый текст: Roboto, 38px, ExtraBold */
@@ -99,8 +114,8 @@
   /* Контакты: Roboto, 35px, Regular */
   .text-contacts {
     font-family: "Roboto", sans-serif;
-    font-size: 35px;
-    line-height: 41px;
+    font-size: 30px;
+    line-height: 38px;
     font-weight: normal;
   }
 
@@ -118,6 +133,14 @@
     font-size: 17px;
     line-height: 20px;
     font-weight: 300; /* Light */
+  }
+
+  /* Описание: Roboto, 17px, Medium */
+  .text-quote {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 500; /* Medium */
   }
 
   /* Описание: Roboto, 17px, Medium */
@@ -139,9 +162,17 @@
   /* Подзаголовок: Gosha Sans, 75px, Ultrabold */
   .text-subtitle {
     font-family: "Gosha Sans", sans-serif;
-    font-size: 75px;
+    font-size: 60px;
     line-height: 90px;
     font-weight: 800; /* Ultrabold */
+  }
+
+  /* Заголовок: Gosha Sans, 90px, Bold */
+  .text-not-found {
+    font-family: "Gosha Sans", sans-serif;
+    font-size: 90px;
+    line-height: 90px;
+    font-weight: 600; /* Ultrabold */
   }
 }
 
@@ -186,7 +217,7 @@
   }
 
   .hover-underline-animation {
-  --underline-color: theme(colors.black); /* Значение по умолчанию */
+  --underline-color: theme(--color-black); /* Значение по умолчанию */
   position: relative;
   display: inline-block;
 }

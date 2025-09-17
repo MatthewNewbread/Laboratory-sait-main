@@ -101,7 +101,6 @@ class EmailTransportClient(
             logger.debug("Building email message for sending...")
             message = notification.get_transport_message()
             contact = recipient.get_transport_contact()
-
             logger.info(f"Sending email to: {contact}")
             await self._smtp.send_message(message, sender=self._default_sender, recipients=contact)
             logger.info("Email sent successfully.")
@@ -156,6 +155,11 @@ class EmailNotifierBuilder(AbstractNotifierBuilder[EmailMessage, str]):
         except Exception as e:
             logger.exception("Failed to render template or initialize EmailNotification.")
             raise e
+
+    def set_notification(self, notification: EmailNotification) -> Self:
+        self._notification = notification
+        logger.debug("EmailNotification set on builder.")
+        return self
 
     def add_recipient(
             self,
