@@ -2,71 +2,7 @@
 
 import ProjectCard from "@/components/ui/ProjectCard";
 import Image from "next/image";
-
-const projects = [
-  {
-    size: "large",
-    img: "Priemnaya_company.png",
-    title: "Приёмная кампания СКФУ",
-    descriptor: "Университет в медиа-трендах – на одной волне с абитуриентами",
-  },
-  {
-    size: "small",
-    img: "Sunc_merch.png",
-    title: "Мерч СУНЦ",
-    descriptor: "Умная одежда для целеустремлённых школьников",
-  },
-  {
-    size: "small",
-    img: "Business_merch.png",
-    title: "Бизнес\nмерч",
-    descriptor: "Мерч, в котором стремишься к успеху",
-  },
-  {
-    size: "large",
-    img: "Calendar.png",
-    title: "Календарь\nСКФУ\n2024",
-    descriptor: "Три календаря — три взгляда на жизнь университета",
-  },
-  {
-    size: "small",
-    img: "Nota_bene.png",
-    title: "Журнальная вёрстка",
-    descriptor: "Правила типографики на страницах журналов",
-  },
-  {
-    size: "small",
-    img: "Etno_merch.png",
-    title: "Этномерч",
-    descriptor: "Синтез культурных традиций и современной моды",
-  },
-  {
-    size: "large",
-    img: "Navigation.png",
-    title: "Брендиро\u00ADвание СКФУ",
-    descriptor: "Удобство и коммуникация в современном университете",
-  },
-  {
-    size: "small",
-    img: "Cyber_class.png",
-    title: "Оформление киберкласса",
-    descriptor: "Нейросети в интерьере будущего",
-  },
-  {
-    size: "small",
-    img: "Jelly_fish.png",
-    title: "Jelly Fish",
-    descriptor: "Остроумная упаковка для студенческого стартапа",
-  },
-  {
-    size: "large",
-    img: "Merch_ncfu.png",
-    title: "Одеждомагазин",
-    descriptor: "Стиль и ирония в университетском мерче",
-  },
-] as const;
-
-const toSlug = (file: string) => file.replace(/\.[^.]+$/, "").toLowerCase();
+import { projectsData as projects } from "@/app/projects/data";
 
 export const Projects = () => {
   return (
@@ -85,7 +21,7 @@ export const Projects = () => {
                 key={p.img}
                 size={p.size}
                 className={p.size === "large" ? "md:col-span-2" : undefined}
-                slug={toSlug(p.img)}
+                slug={p.slug}
                 title={p.title}
                 descriptor={p.descriptor}
                 logo={{ src: "/svg/Logo-full_black.svg", alt: "Logo" }}
