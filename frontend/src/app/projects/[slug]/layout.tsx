@@ -3,14 +3,15 @@ import { Footer } from "@/app/footer/Footer";
 import { notFound } from "next/navigation";
 import { getProjectBySlug } from "@/app/projects/data";
 
-export default function ProjectLayout({
-  children,
-  params,
-}: {
+type LayoutProps = {
   children: React.ReactNode;
-  params: { slug: string };
-}) {
-  const project = getProjectBySlug(params.slug);
+  params: Promise<{ slug: string }>;
+};
+
+const ProjectLayout = async ({ children, params }: LayoutProps) => {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
   if (!project) {
     notFound();
   }
@@ -29,4 +30,6 @@ export default function ProjectLayout({
       <Footer />
     </>
   );
-}
+};
+
+export default ProjectLayout;

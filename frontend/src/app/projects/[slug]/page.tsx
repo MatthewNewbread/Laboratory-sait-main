@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { projectsData } from "@/app/projects/data";
+import { getProjectBySlug } from "@/app/projects/data";
 
 type PageProps = {
   params: { slug: string };
@@ -10,13 +11,13 @@ export const generateStaticParams = () =>
 
 export const dynamicParams = false;
 
-export default function ProjectPage({ params: { slug } }: PageProps) {
-  const project = projectsData.find((p) => p.slug === slug);
+export default async function ProjectPage({ params }: PageProps) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
-    notFound(); 
+    notFound();
   }
 
-  const { Component } = project;
-  return <Component />;
+  return <div>{project.title}</div>;
 }
