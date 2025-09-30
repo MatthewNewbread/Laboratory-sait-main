@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { cn } from '@/lib/cn';
+import Image from "next/image";
+import { cn } from "@/lib/cn";
 
 interface PersonCardProps {
   src: string;
@@ -14,7 +14,7 @@ interface PersonCardProps {
 
 export default function PersonCard({
   src,
-  alt = '',
+  alt = "",
   name,
   descriptor,
   hoverText,
@@ -24,8 +24,8 @@ export default function PersonCard({
     <div
       className={cn(
         // ключевые изменения ↓
-        'flex-none w-[200px] flex flex-col items-center',
-        className,
+        "flex-none w-[200px] flex flex-col items-center",
+        className
       )}
     >
       <div className="relative group aspect-square w-full">
@@ -37,6 +37,7 @@ export default function PersonCard({
           sizes="200px"
           className="rounded-full object-cover transition-opacity duration-300 group-hover:opacity-0"
           priority
+          unoptimized
         />
 
         {hoverText && (

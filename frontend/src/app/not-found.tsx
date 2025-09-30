@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -19,14 +19,14 @@ export default function NotFound() {
         </p>
         <Link href="/">
           <Image
-          src="/svg/404/404.svg"
-          alt="Логотип"
-          width={420}
-          height={514}
-          priority
-        />
+            src="/svg/404/404.svg"
+            alt="Логотип"
+            width={420}
+            height={514}
+            priority
+            unoptimized
+          />
         </Link>
-
 
         <p className="text-not-found text-primary">
           Перейди на другую страницу

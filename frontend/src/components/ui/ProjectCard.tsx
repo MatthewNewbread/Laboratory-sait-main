@@ -59,6 +59,7 @@ export default function ProjectCard({
         sizes={v.imgSz}
         className="object-cover"
         priority
+        unoptimized
       />
       <div
         className={c(
@@ -73,6 +74,7 @@ export default function ProjectCard({
             className={c("object-contain", v.logo)}
             width={1}
             height={1}
+            priority
             unoptimized
           />
           <h3

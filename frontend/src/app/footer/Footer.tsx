@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -12,9 +12,10 @@ export const Footer = () => {
           width={646}
           height={331}
           priority
+          unoptimized
         />
         <p className="absolute inset-0 mx-auto flex max-w-[320px] items-center justify-center text-contacts text-black text-center whitespace-pre-line">
-          {'+7 (962)-444-98-96\nlaboratory_media_design@mail.ru'}
+          {"+7 (962)-444-98-96\nlaboratory_media_design@mail.ru"}
         </p>
       </div>
       <div className="flex flex-col gap-16 flex-1 order-2 xl:order-1">
@@ -29,12 +30,21 @@ export const Footer = () => {
               width={212}
               height={138}
               priority
+              unoptimized
             />
           </a>
-          <a href="#about" className="hover-underline-animation" style={{ '--underline-color': 'white' } as React.CSSProperties}>
+          <a
+            href="#about"
+            className="hover-underline-animation"
+            style={{ "--underline-color": "white" } as React.CSSProperties}
+          >
             О нас
           </a>
-          <a href="#projects" className="hover-underline-animation" style={{ '--underline-color': 'white' } as React.CSSProperties}>
+          <a
+            href="#projects"
+            className="hover-underline-animation"
+            style={{ "--underline-color": "white" } as React.CSSProperties}
+          >
             Проекты
           </a>
         </nav>
@@ -43,5 +53,5 @@ export const Footer = () => {
         </p>
       </div>
     </section>
-  )
-}
+  );
+};

@@ -28,7 +28,7 @@ export const Contact = () => {
     try {
       await postContact({ fio, email, phone, agree: true });
       setStatus("ok");
-      form.reset();       // <- теперь form не null
+      form.reset(); // <- теперь form не null
       setAgree(false);
     } catch (err) {
       console.error(err);
@@ -47,6 +47,7 @@ export const Contact = () => {
             width={792}
             height={519}
             priority
+            unoptimized
           />
           <p
             className="absolute top-1/2 -translate-y-1/2
@@ -124,6 +125,7 @@ export const Contact = () => {
               width={226}
               height={209}
               priority
+              unoptimized
             />
           </div>
         </div>

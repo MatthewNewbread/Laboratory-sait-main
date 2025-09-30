@@ -24,10 +24,11 @@ export const Header = () => {
 
   return (
     <>
-      <header data-site-header
+      <header
+        data-site-header
         className={`fixed inset-x-0 top-0 z-50 h-[69px] transition-colors ${
           isScrolled ? "bg-primary" : "bg-transparent"
-        }`} 
+        }`}
       >
         <div className="mx-auto flex h-full w-full max-w-[1920px] items-center justify-between px-[clamp(40px,4vw,160px)]">
           <nav className="mx-auto hidden items-center gap-[clamp(16px,calc(13.89vw-90.67px),176px)] whitespace-nowrap md:flex">
@@ -53,6 +54,7 @@ export const Header = () => {
               width={60}
               height={60}
               priority
+              unoptimized
             />
           </button>
           <button
@@ -66,6 +68,7 @@ export const Header = () => {
               width={40}
               height={40}
               priority
+              unoptimized
             />
           </button>
         </div>
@@ -93,6 +96,7 @@ export const Header = () => {
               width={40}
               height={40}
               priority
+              unoptimized
             />
           </button>
 
@@ -111,6 +115,7 @@ export const Header = () => {
               width={157}
               height={102}
               priority
+              unoptimized
             />
           </div>
         </div>

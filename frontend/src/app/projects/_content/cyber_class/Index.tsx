@@ -10,9 +10,7 @@ export const CyberClassProject = () => {
   ];
 
   return (
-    <article
-      className="w-full"
-    >
+    <article className="w-full">
       {images.map((src, i) => (
         <div key={i} className="relative w-full h-screen">
           <Image
@@ -20,7 +18,8 @@ export const CyberClassProject = () => {
             alt={`Кибер класс ${i + 1}`}
             fill
             className="object-cover"
-            priority={i === 0} 
+            priority={i === 0}
+            unoptimized
           />
         </div>
       ))}
