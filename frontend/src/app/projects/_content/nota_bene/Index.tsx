@@ -1,23 +1,30 @@
 "use client";
 
+import Image from "next/image";
+
 export const NotaBeneProject = () => {
+  const images = [
+    "/images/projects/_content/nota_bene/1-image.png",
+    "/images/projects/_content/nota_bene/2-image.png",
+    "/images/projects/_content/nota_bene/3-image.png",
+    "/images/projects/_content/nota_bene/4-image.png",
+  ];
+
   return (
     <article
-      className="w-full px-6 py-12"
-      aria-label="Проект Приёмная кампания СКФУ"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === "Escape") (e.currentTarget as HTMLElement).blur();
-      }}
+      className="w-full"
     >
-      <h1 className="text-3xl font-bold">Приёмная кампания СКФУ</h1>
-      <p className="mt-4 max-w-2xl">
-        Университет в медиа-трендах – на одной волне с абитуриентами
-      </p>
-
-      {/* здесь потом добавим реальные секции */}
-      <section className="mt-10 border-t pt-6">Секция 1 (пока пусто)</section>
-      <section className="mt-10 border-t pt-6">Секция 2 (пока пусто)</section>
+      {images.map((src, i) => (
+        <div key={i} className="relative w-full h-screen">
+          <Image
+            src={src}
+            alt={`Nota Bene ${i + 1}`}
+            fill
+            className="object-cover"
+            priority={i === 0} 
+          />
+        </div>
+      ))}
     </article>
   );
 };

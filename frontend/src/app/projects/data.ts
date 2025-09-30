@@ -1,5 +1,4 @@
 import type { JSX } from "react";
-import { PriemnayaCompanyProject } from "./_content/priemnaya_company/Index";
 import { BusinessMerchProject } from "./_content/business_merch/Index";
 import { CalendarProject } from "./_content/calendar/Index";
 import { CyberClassProject } from "./_content/cyber_class/Index";
@@ -8,6 +7,7 @@ import { JellyFishProject } from "./_content/jelly_fish/Index";
 import { MerchNcfuProject } from "./_content/merch_ncfu/Index";
 import { NavigationProject } from "./_content/navigation/Index";
 import { NotaBeneProject } from "./_content/nota_bene/Index";
+import { PriemnayaCompanyProject } from "./_content/priemnaya_company/Index";
 import { SuncMerchProject } from "./_content/sunc_merch/Index";
 
 export type ProjectItem = {
